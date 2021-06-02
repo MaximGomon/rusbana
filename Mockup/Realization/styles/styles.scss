@@ -1,0 +1,8 @@
+@import "../styles/variables/colors";
+@import "../styles/mixins/fonts";
+//elements
+@import "../styles/elements/header";
+@import "../styles/elements/nav";
+body {
+    @include main-font;
+}
