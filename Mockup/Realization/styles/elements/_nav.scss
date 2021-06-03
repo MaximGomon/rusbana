@@ -1,9 +1,28 @@
+@import '../variables/colors';
 /*********** Nav Bar CSS **********/
+@mixin text-color {
+    color: $white;
+}
+
+@mixin text-color-hover {
+    color: $yellow;
+}
+
+@mixin btn-color-hover {
+    background: #fdbe33;
+    border-color: #fdbe33;
+}
+
+@media (max-width: 992px) {
+    body .nav-bar {
+        padding: 0; 
+    }
+}
 
 .nav-bar {
     position: relative;
-    transition: .3s;
-    padding: 0;
+    transition: .5s;
+    padding: 0 70px;
 }
 
 .nav-bar .container-fluid {
@@ -11,12 +30,13 @@
 }
 
 .nav-bar.nav-sticky {
+    transition: .5s;
     position: fixed;
     top: 0;
     width: 100%;
-    max-width: 1366px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    //max-width: 1366px;
     z-index: 999;
+    padding: 0;
 }
 
 .nav-bar .navbar {
@@ -28,12 +48,12 @@
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
     padding: 10px 10px 8px 10px;
-    color: #ffffff;
+    @include text-color;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #fdbe33;
+    @include text-color-hover;
     transition: none;
 }
 
@@ -51,9 +71,8 @@
 }
 
 .nav-bar .btn:hover {
-    color: #030f27;
-    background: #fdbe33;
-    border-color: #fdbe33;
+    @include text-color;
+    @include btn-color-hover;
 }
 
 @media (min-width: 992px) {

@@ -132,9 +132,12 @@
   }
 }
 
+.yellow-bg {
+  background: #fdbe33;
+}
+
 .top-bar {
   position: relative;
-  background: #fdbe33;
 }
 
 .top-bar .logo {
@@ -165,7 +168,7 @@
 }
 
 .top-bar .top-bar-text p {
-  color: #000000;
+  color: #333;
   margin: 0;
   font-size: 13px;
   font-weight: 400;
@@ -239,18 +242,24 @@
 }
 
 .top-bar .top-bar-text h3 {
-  color: #000000;
+  color: #333;
   margin: 0;
   font-size: 13px;
   font-weight: 600;
 }
 
 /*********** Nav Bar CSS **********/
+@media (max-width: 992px) {
+  body .nav-bar {
+    padding: 0;
+  }
+}
+
 .nav-bar {
   position: relative;
-  -webkit-transition: .3s;
-  transition: .3s;
-  padding: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  padding: 0 70px;
 }
 
 .nav-bar .container-fluid {
@@ -258,13 +267,13 @@
 }
 
 .nav-bar.nav-sticky {
+  -webkit-transition: .5s;
+  transition: .5s;
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 1366px;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 999;
+  padding: 0;
 }
 
 .nav-bar .navbar {
@@ -276,7 +285,7 @@
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
   padding: 10px 10px 8px 10px;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -300,7 +309,7 @@
 }
 
 .nav-bar .btn:hover {
-  color: #030f27;
+  color: #FFFFFF;
   background: #fdbe33;
   border-color: #fdbe33;
 }

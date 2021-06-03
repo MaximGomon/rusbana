@@ -3,7 +3,7 @@
 /********** Top Bar CSS ***********/
 
 @mixin text-color {
-    color: $back;
+    color: $dark-gray;
 }
 
 @mixin link-style {
@@ -38,13 +38,17 @@
     }
 }
 
+.yellow-bg {
+    background: $yellow;
+}
+
 .top-bar {
     position: relative;
     //height: 90px;
-    background: $yellow;
+    //background: $yellow;
     & .logo {
         padding: 15px 0;
-        text-align: left;
+        text-align: left;   
         overflow: hidden;
         & img {
             max-width: 100%;
