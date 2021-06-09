@@ -1,5 +1,7 @@
 @import '../variables/colors';
+
 /*********** Nav Bar CSS **********/
+
 @mixin text-color {
     color: $white;
 }
@@ -11,11 +13,12 @@
 @mixin btn-color-hover {
     background: #fdbe33;
     border-color: #fdbe33;
+    color: $dark-gray;
 }
 
 @media (max-width: 992px) {
     body .nav-bar {
-        padding: 0; 
+        padding: 0;
     }
 }
 

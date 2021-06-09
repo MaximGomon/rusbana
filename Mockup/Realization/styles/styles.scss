@@ -3,6 +3,33 @@
 //elements
 @import "../styles/elements/header";
 @import "../styles/elements/nav";
+@import "../styles/elements/about";
+@import "../styles/elements/features";
+@import "../styles/elements/service";
+@import "../styles/elements/facts";
+@import "../styles/elements/faqs";
 body {
     @include main-font;
+    background: #eee;
+    color: $dark-gray;
+}
+
+.section-header {
+    margin-bottom: 30px;
+    & P {
+        color: $main-orange;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    & h2 {
+        margin: 0;
+        position: relative;
+        font-size: 50px;
+        font-weight: 700;
+    }
+}
+
+.card-header:first-child {
+    border-radius: 0;
 }

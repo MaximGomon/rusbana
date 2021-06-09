@@ -11,8 +11,16 @@
         font-size: 14px;
         color: $logo-blue;
         text-decoration: none;
+        & h3,
+        & p {
+            color: $logo-blue;
+        }
         &:hover {
             color: $main-blue;
+            & h3,
+            & p {
+                color: $main-blue;
+            }
         }
     }
 }
@@ -48,7 +56,7 @@
     //background: $yellow;
     & .logo {
         padding: 15px 0;
-        text-align: left;   
+        text-align: left;
         overflow: hidden;
         & img {
             max-width: 100%;
