@@ -137,7 +137,6 @@
         <div class="nav-ancor"></div>
         <!-- Nav Bar End -->
     </div>
-
     <!-- About Start -->
     <div class="about" data-aos="fade-up">
         <div class="container">
@@ -493,6 +492,21 @@
     </div>
     <!-- FAQs End -->
 
+    <!-- Video Start -->
+    <div class="video" style="background: linear-gradient(rgba(3, 15, 39, .9), rgba(3, 15, 39, .9)), url(img/prod_475_0006.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;">
+        <div class="container">
+            <button class="btn-play">
+                <span></span>
+            </button>
+        </div>
+        <div id="video"></div>
+    </div>
+    <!-- Video End -->
+
     <script>
         AOS.init();
 
@@ -502,6 +516,44 @@
             } else {
                 $(this).closest(".card.expanded").removeClass("expanded").addClass("collapsed");
             }
+        });
+
+        var ytVideo;
+        function loadVideo() {
+            window.YT.ready(function() {
+                ytVideo = new window.YT.Player("video", {
+                    height: "390",
+                    width: "640",
+                    videoId: "7Jb-M7ITdwI",
+                    suggestedQuality: "hd1080",
+                    events: {
+                        onReady: onPlayerReady,
+                        onStateChange: onPlayerStateChange
+                    }
+                });
+            });
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            function onPlayerStateChange(event) {
+                var videoStatuses = Object.entries(window.YT.PlayerState)
+                console.log(videoStatuses.find(status => status[1] === event.data)[0])
+            }
+        }
+
+        $(document).ready(function() {
+            $.getScript("https://www.youtube.com/iframe_api", function() {
+                loadVideo();
+            });
+        });
+        $("#video").css("display", "none");
+        $('.video .btn-play').click(function() { 
+            console.log("123");
+            $(this).css("display", "none");
+            $("#video").css("display", "block");
+            ytVideo.playVideo();
         });
     </script>
 </body>
